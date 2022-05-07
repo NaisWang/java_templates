@@ -6,8 +6,8 @@ import java.awt.*;
 /**
  * @author : whz
  */
-public class RecursiveShowForTreeNode extends JPanel {
-	private JPanel drawingPanel;
+class RecursiveShowForTreeNode extends JPanel {
+	public TreeCanvas drawingPanel;
 
 	public RecursiveShowForTreeNode(RecursiveShowNode root) {
 		super(new BorderLayout());
@@ -24,10 +24,10 @@ public class RecursiveShowForTreeNode extends JPanel {
 	class TreeCanvas extends JPanel {
 
 		private RecursiveShowNode root;
-		private int y0ff;
-		private int x0ff;
-		private int rows;
-		private int cols;
+		public int y0ff;
+		public int x0ff;
+		public int rows;
+		public int cols;
 		private int maxHeight;
 		private int maxWeight;
 		private int outputMaxLineNumber;
@@ -37,7 +37,7 @@ public class RecursiveShowForTreeNode extends JPanel {
 			init();
 		}
 
-		private void init() {
+		public void init() {
 			outputMaxLineNumber = root.getOutputLineNumber();
 			rows = depthChild(root);
 			cols = leafNumber(root) + 3;
@@ -75,6 +75,7 @@ public class RecursiveShowForTreeNode extends JPanel {
 
 		@Override
 		protected void paintComponent(Graphics g) {
+			//super.paintComponent(g);
 			Dimension dim = getSize();
 			x0ff = dim.width / cols;
 			y0ff = 10;
@@ -86,7 +87,7 @@ public class RecursiveShowForTreeNode extends JPanel {
 		/**
 		 * 绘制节点
 		 */
-		void printNode(String nodeText, int[] parentPt, Graphics g) {
+		public void printNode(String nodeText, int[] parentPt, Graphics g) {
 			Graphics2D g2d = (Graphics2D) g;
 			g2d.setStroke(new BasicStroke(3.0f));
 			if (nodeText.endsWith("-isDp")) {
@@ -131,7 +132,7 @@ public class RecursiveShowForTreeNode extends JPanel {
 	}
 
 	public static void print() {
-		JFrame frame = new JFrame("递归搜索树");
+		JFrame frame = new JFrame("递归可视化--树");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JComponent newContentPane = new RecursiveShowForTreeNode(RecursiveShowUtils.rootNode);

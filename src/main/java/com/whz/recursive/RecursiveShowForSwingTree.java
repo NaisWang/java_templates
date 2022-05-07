@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * @author : whz
  */
-public class RecursiveShowForSwingTree extends JPanel {
+class RecursiveShowForSwingTree extends JPanel {
 
 	public RecursiveShowForSwingTree(RecursiveShowNode root) {
 		super(new BorderLayout());
@@ -51,8 +51,7 @@ public class RecursiveShowForSwingTree extends JPanel {
 
 
 	public static void print() {
-
-		JFrame frame = new JFrame("递归搜索树");
+		JFrame frame = new JFrame("递归可视化-列表");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		JComponent newContentPane = new RecursiveShowForSwingTree(RecursiveShowUtils.rootNode);

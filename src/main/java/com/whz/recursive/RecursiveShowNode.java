@@ -8,7 +8,7 @@ import java.util.Stack;
 /**
  * @author : whz
  */
-public class RecursiveShowNode {
+class RecursiveShowNode {
 
 	/**
 	 * 孩子节点
@@ -59,12 +59,6 @@ public class RecursiveShowNode {
 
 	public String toTreeString() {
 		return toString().replace(",", ",\n");
-	}
-
-	public RecursiveShowNode createChildNode() {
-		RecursiveShowNode childNode = new RecursiveShowNode();
-		this.children.add(childNode);
-		return childNode;
 	}
 
 	public int getOutputLineNumber() {

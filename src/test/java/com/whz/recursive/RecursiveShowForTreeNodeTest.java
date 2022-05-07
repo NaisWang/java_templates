@@ -1,8 +1,5 @@
 package com.whz.recursive;
 
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
@@ -22,9 +19,12 @@ public class RecursiveShowForTreeNodeTest {
 				{1, 2, 3, 4, 5, 5, 0}
 		};
 
+
 		SolutionForTreeNodeTest solution = new SolutionForTreeNodeTest(7, g);
+
 		solution.dfs(0);
-		RecursiveShowUtils.print(0);
+
+		RecursiveShowUtils.print(2);
 
 	}
 }
