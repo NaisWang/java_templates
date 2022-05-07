@@ -3,14 +3,14 @@ package com.whz.recursive;
 /**
  * 带有备忘录的dfs
  */
-public class SolutionForSwingTreeTest {
+public class SolutionForTreeTest {
 
 	private Integer n = null;
 	private int[][] g = null;
 	private Integer visited = 1 << 20;
 	private Integer[][] dp = new Integer[visited << 1][20];
 
-	public SolutionForSwingTreeTest(Integer n, int[][] g) {
+	public SolutionForTreeTest(Integer n, int[][] g) {
 		this.n = n;
 		this.g = g;
 	}
@@ -31,7 +31,7 @@ public class SolutionForSwingTreeTest {
 				} else {
 					RecursiveShowUtils.dpOperate(dp[visited][i], visited, i);
 				}
-
+				RecursiveShowUtils.inStack().addInVariable(String.format("g[%s][%s]", now, i), g[now][i]);
 				temp = Math.min(temp, dp[visited][i] + g[now][i]);
 				visited ^= (1 << i);
 			}
@@ -40,7 +40,7 @@ public class SolutionForSwingTreeTest {
 			temp = g[now][n - 1];
 		}
 
-		RecursiveShowUtils.outStack(temp + "").addOutVariable("dp[" + visited + "]" + "[" + now + "]", temp + "");
+		RecursiveShowUtils.outStack(temp).addOutVariable("dp[" + visited + "]" + "[" + now + "]", temp + "");
 		return temp;
 	}
 }

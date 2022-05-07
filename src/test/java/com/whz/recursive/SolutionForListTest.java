@@ -3,14 +3,14 @@ package com.whz.recursive;
 /**
  * 带有备忘录的dfs
  */
-public class SolutionForTreeNodeTest {
+public class SolutionForListTest {
 
 	private Integer n = null;
 	private int[][] g = null;
 	private Integer visited = 1 << 20;
 	private Integer[][] dp = new Integer[visited << 1][20];
 
-	public SolutionForTreeNodeTest(Integer n, int[][] g) {
+	public SolutionForListTest(Integer n, int[][] g) {
 		this.n = n;
 		this.g = g;
 	}
@@ -40,7 +40,7 @@ public class SolutionForTreeNodeTest {
 			temp = g[now][n - 1];
 		}
 
-		RecursiveShowUtils.outStack(temp).addOutVariable("dp[" + visited + "]" + "[" + now + "]", temp + "");
+		RecursiveShowUtils.outStack(temp + "").addOutVariable("dp[" + visited + "]" + "[" + now + "]", temp + "");
 		return temp;
 	}
 }

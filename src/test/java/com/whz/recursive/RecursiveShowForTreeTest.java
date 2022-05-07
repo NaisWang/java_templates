@@ -1,8 +1,5 @@
 package com.whz.recursive;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 /**
  * 对应的题目为[最短Hamilton路径](https://www.acwing.com/problem/content/93/)
  */
@@ -20,8 +17,7 @@ public class RecursiveShowForTreeTest {
 		};
 
 
-		SolutionForTreeNodeTest solution = new SolutionForTreeNodeTest(7, g);
-
+		SolutionForTreeTest solution = new SolutionForTreeTest(7, g);
 		solution.dfs(0);
 
 		RecursiveShowUtils.print(3);
