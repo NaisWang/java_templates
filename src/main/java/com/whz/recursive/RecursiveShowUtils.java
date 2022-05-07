@@ -89,12 +89,12 @@ public class RecursiveShowUtils {
 	 */
 	public static void print(Integer method) {
 		if (method.equals(SHOW_AS_TREE)) {
-			RecursiveShowForTreeNode.print();
+			RecursiveShowForTree.print();
 		} else if (method.equals(SHOW_AS_LIST)) {
-			RecursiveShowForSwingTree.print();
+			RecursiveShowForList.print();
 		} else {
-			RecursiveShowForTreeNode.print();
-			RecursiveShowForSwingTree.print();
+			RecursiveShowForTree.print();
+			RecursiveShowForList.print();
 		}
 		init();
 	}

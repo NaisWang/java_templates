@@ -6,10 +6,10 @@ import java.awt.*;
 /**
  * @author : whz
  */
-class RecursiveShowForTreeNode extends JPanel {
+class RecursiveShowForTree extends JPanel {
 	public TreeCanvas drawingPanel;
 
-	public RecursiveShowForTreeNode(RecursiveShowNode root) {
+	public RecursiveShowForTree(RecursiveShowNode root) {
 		super(new BorderLayout());
 
 		drawingPanel = new TreeCanvas(root);
@@ -135,7 +135,7 @@ class RecursiveShowForTreeNode extends JPanel {
 		JFrame frame = new JFrame("递归可视化--树");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		JComponent newContentPane = new RecursiveShowForTreeNode(RecursiveShowUtils.rootNode);
+		JComponent newContentPane = new RecursiveShowForTree(RecursiveShowUtils.rootNode);
 		newContentPane.setOpaque(true);
 		frame.setContentPane(newContentPane);
 

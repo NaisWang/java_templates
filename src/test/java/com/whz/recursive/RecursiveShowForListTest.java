@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * 对应的题目为[最短Hamilton路径](https://www.acwing.com/problem/content/93/)
  */
-public class RecursiveShowForSwingTreeTest {
+public class RecursiveShowForListTest {
 
 
 	public static void main(String[] args) {

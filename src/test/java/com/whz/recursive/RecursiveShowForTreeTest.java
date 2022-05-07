@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * 对应的题目为[最短Hamilton路径](https://www.acwing.com/problem/content/93/)
  */
-public class RecursiveShowForTreeNodeTest {
+public class RecursiveShowForTreeTest {
 	public static void main(String[] args) {
 
 		int[][] g = new int[][]{
@@ -24,7 +24,7 @@ public class RecursiveShowForTreeNodeTest {
 
 		solution.dfs(0);
 
-		RecursiveShowUtils.print(2);
+		RecursiveShowUtils.print(3);
 
 	}
 }
