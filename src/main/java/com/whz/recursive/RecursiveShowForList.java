@@ -10,7 +10,7 @@ import java.awt.*;
  */
 class RecursiveShowForList extends JPanel {
 
-	public RecursiveShowForList(RecursiveShowNode root) {
+	private RecursiveShowForList(RecursiveShowNode root) {
 		super(new BorderLayout());
 
 		JTree jt = new JTree(translate2SwingTree(root));

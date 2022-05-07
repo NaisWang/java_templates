@@ -7,9 +7,9 @@ import java.awt.*;
  * @author : whz
  */
 class RecursiveShowForTree extends JPanel {
-	public TreeCanvas drawingPanel;
+	private TreeCanvas drawingPanel;
 
-	public RecursiveShowForTree(RecursiveShowNode root) {
+	private RecursiveShowForTree(RecursiveShowNode root) {
 		super(new BorderLayout());
 
 		drawingPanel = new TreeCanvas(root);
@@ -24,10 +24,10 @@ class RecursiveShowForTree extends JPanel {
 	class TreeCanvas extends JPanel {
 
 		private RecursiveShowNode root;
-		public int y0ff;
-		public int x0ff;
-		public int rows;
-		public int cols;
+		private int y0ff;
+		private int x0ff;
+		private int rows;
+		private int cols;
 		private int maxHeight;
 		private int maxWeight;
 		private int outputMaxLineNumber;
