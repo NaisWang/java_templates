@@ -20,7 +20,7 @@ public class SolutionForListTest {
 	}
 
 	public int dfs(int now) {
-		RecursiveShowUtils.enterStack().addEnterVariable("now", now);
+		RecursiveShowUtils.enterStack().add("now", now);
 
 		int temp = Integer.MAX_VALUE;
 		for (int i = 1; i < n - 1; i++) {
@@ -40,7 +40,7 @@ public class SolutionForListTest {
 			temp = g[now][n - 1];
 		}
 
-		RecursiveShowUtils.outStack(temp + "").addOutVariable("dp[" + visited + "]" + "[" + now + "]", temp + "");
+		RecursiveShowUtils.outStack(temp + "").add("dp[" + visited + "]" + "[" + now + "]", temp + "");
 		return temp;
 	}
 }

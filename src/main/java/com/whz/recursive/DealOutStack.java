@@ -10,7 +10,7 @@ public class DealOutStack {
 
 	public static DealOutStack dealOutStack = new DealOutStack();
 
-	public DealOutStack addOutVariable(Object key, Object value) {
+	public DealOutStack add(Object key, Object value) {
 		RecursiveShowUtils.lastPopNode.outVariable.put(String.valueOf(key), String.valueOf(value));
 		return dealOutStack;
 	}

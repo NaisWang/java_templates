@@ -10,7 +10,7 @@ public class DealInStack {
 
 	public static DealInStack dealInStack = new DealInStack();
 
-	public DealInStack addInVariable(Object key, Object value) {
+	public DealInStack add(Object key, Object value) {
 		RecursiveShowUtils.recursiveShowNodeStack.peek().inVariable.put(String.valueOf(key), String.valueOf(value));
 		return dealInStack;
 	}

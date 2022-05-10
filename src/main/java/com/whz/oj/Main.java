@@ -22,57 +22,100 @@ class BaseUtil {
 			return scan.nextByte();
 		} else if (a.equals(String.class)) {
 			return scan.nextLine();
-		}
-		return null;
-	}
-
-	<T> void read(T[] a) {
-		for (int i = 0; i < a.length; i++) {
-			a[i] = (T) getDataByScanner(a.getClass().getComponentType());
+		} else {
+			throw new RuntimeException("输入的数据类型不支持!!!");
 		}
 	}
 
-	<T> void read(T[][] a) {
-		for (int i = 0; i < a.length; i++) {
-			for (int j = 0; j < a[i].length; j++) {
-				a[i][j] = (T) getDataByScanner(a[i].getClass().getComponentType());
+	void read(Object o) {
+		Class eClass = o.getClass();
+		if (eClass == byte[].class) {
+			byte[] b = (byte[]) o;
+			for (int i1 = 0; i1 < b.length; i1++) {
+				b[i1] = (Byte) getDataByScanner(Byte.class);
+			}
+		} else if (eClass == short[].class) {
+			short[] b = (short[]) o;
+			for (int i1 = 0; i1 < b.length; i1++) {
+				b[i1] = (Short) getDataByScanner(Short.class);
+			}
+		} else if (eClass == int[].class) {
+			int[] b = (int[]) o;
+			for (int i1 = 0; i1 < b.length; i1++) {
+				b[i1] = (Integer) getDataByScanner(Integer.class);
+			}
+		} else if (eClass == long[].class) {
+			long[] b = (long[]) o;
+			for (int i1 = 0; i1 < b.length; i1++) {
+				b[i1] = (Long) getDataByScanner(Long.class);
+			}
+		} else if (eClass == char[].class) {
+			long[] b = (long[]) o;
+			for (int i1 = 0; i1 < b.length; i1++) {
+				b[i1] = (Long) getDataByScanner(Long.class);
+			}
+		} else if (eClass == float[].class) {
+			float[] b = (float[]) o;
+			for (int i1 = 0; i1 < b.length; i1++) {
+				b[i1] = (Float) getDataByScanner(Float.class);
+			}
+		} else if (eClass == double[].class) {
+			double[] b = (double[]) o;
+			for (int i1 = 0; i1 < b.length; i1++) {
+				b[i1] = (Double) getDataByScanner(Double.class);
+			}
+		} else if (eClass == boolean[].class) {
+			boolean[] b = (boolean[]) o;
+			for (int i1 = 0; i1 < b.length; i1++) {
+				b[i1] = (Boolean) getDataByScanner(Boolean.class);
 			}
 		}
 	}
 
-	<T> void read(T[][][] a) {
+	void read(Object[] a) {
 		for (int i = 0; i < a.length; i++) {
-			for (int j = 0; j < a[i].length; j++) {
-				for (int k = 0; k < a[i][j].length; k++) {
-					a[i][j][k] = (T) getDataByScanner(a[i][j].getClass().getComponentType());
-				}
+			Object o = a[i];
+			if (o == null || !o.getClass().isArray()) {
+				a[i] = getDataByScanner(a.getClass().getComponentType());
+				continue;
+			}
+			Class eClass = o.getClass();
+			if (Arrays.asList(byte[].class, short[].class, int[].class, long[].class, char[].class, float[].class, double.class, double.class).contains(eClass)) {
+				read(o);
+			} else {
+				read((Object[]) o);
 			}
 		}
 	}
 
-	<T> void println(T[] a) {
-		System.out.println(Arrays.toString(a));
+	void println(Object[] a) {
+		System.out.println(Arrays.deepToString(a));
 	}
 
-	<T> void println(T[][] a) {
-		for (int i = 0; i < a.length; i++) {
-			System.out.println(Arrays.toString(a[i]));
-		}
-	}
-
-	<T> void println(T[][][] a) {
-		for (int i = 0; i < a.length; i++) {
-			System.out.println("#" + i + ":");
-			for (int j = 0; j < a[i].length; j++) {
-				System.out.println(Arrays.toString(a[i][j]));
-			}
+	void println(Object a) {
+		Class eClass = a.getClass();
+		if (eClass == byte[].class) {
+			System.out.println(Arrays.toString((byte[]) a));
+		} else if (eClass == short[].class) {
+			System.out.println(Arrays.toString((short[]) a));
+		} else if (eClass == int[].class) {
+			System.out.println(Arrays.toString((int[]) a));
+		} else if (eClass == long[].class) {
+			System.out.println(Arrays.toString((long[]) a));
+		} else if (eClass == char[].class) {
+			System.out.println(Arrays.toString((char[]) a));
+		} else if (eClass == float[].class) {
+			System.out.println(Arrays.toString((float[]) a));
+		} else if (eClass == double[].class) {
+			System.out.println(Arrays.toString((double[]) a));
+		} else if (eClass == boolean[].class) {
+			System.out.println(Arrays.toString((boolean[]) a));
 		}
 	}
 }
 
 class Solution extends BaseUtil {
 	public void solve() {
-
 	}
 }
 

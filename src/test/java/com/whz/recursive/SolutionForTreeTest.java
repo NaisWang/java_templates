@@ -20,7 +20,7 @@ public class SolutionForTreeTest {
 	}
 
 	public int dfs(int now) {
-		RecursiveShowUtils.enterStack().addEnterVariable("now", now);
+		RecursiveShowUtils.enterStack().add("now", now);
 
 		int temp = Integer.MAX_VALUE;
 		for (int i = 1; i < n - 1; i++) {
@@ -31,7 +31,7 @@ public class SolutionForTreeTest {
 				} else {
 					RecursiveShowUtils.dpOperate(dp[visited][i], visited, i);
 				}
-				RecursiveShowUtils.inStack().addInVariable(String.format("g[%s][%s]", now, i), g[now][i]);
+				RecursiveShowUtils.inStack().add(String.format("g[%s][%s]", now, i), g[now][i]);
 				temp = Math.min(temp, dp[visited][i] + g[now][i]);
 				visited ^= (1 << i);
 			}
@@ -40,7 +40,7 @@ public class SolutionForTreeTest {
 			temp = g[now][n - 1];
 		}
 
-		RecursiveShowUtils.outStack(temp).addOutVariable("dp[" + visited + "]" + "[" + now + "]", temp + "");
+		RecursiveShowUtils.outStack(temp).add("dp[" + visited + "]" + "[" + now + "]", temp + "");
 		return temp;
 	}
 }
